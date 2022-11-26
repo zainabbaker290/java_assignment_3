@@ -33,4 +33,12 @@ public class ColourTest {
     public void exceptionBlueTest(){
         assertThrows(IllegalArgumentException.class, () -> new Colour(0,0,8));
     }
+
+    @Test
+    public void RGBMixed(){
+        Colour black = new Colour(new int[] {0x00,0x00,0x00});
+        assertEquals(black.red, 0x00, 0.0);
+        assertEquals(black.red, 0x00, 0.0);
+        assertEquals(black.red, 0x00,0.0);
+    }
 }
