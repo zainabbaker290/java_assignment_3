@@ -1,7 +1,14 @@
 import org.testng.annotations.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+/**
+ * this class is used to test the colour class
+ */
 public class ColourTest {
+    /**
+     * the following three tests, test if the values match the required values
+     */
     @Test
     public void testDisplayRedColourTest() {
         Colour brown = new Colour(0.59,0.0,0.0);
@@ -19,6 +26,9 @@ public class ColourTest {
         assertEquals(brown.blue, 0.0, 0.0);
     }
 
+    /**
+     * the following three tests, test if the values entered are within range
+     */
     @Test
     public void exceptionRedTest(){
         assertThrows(IllegalArgumentException.class, () -> new Colour(7,0,0));
@@ -34,6 +44,9 @@ public class ColourTest {
         assertThrows(IllegalArgumentException.class, () -> new Colour(0,0,8));
     }
 
+    /**
+     * Tests the constructor for a Colour object which is a combined RGB value
+     */
     @Test
     public void RGBMixed(){
         Colour black = new Colour(new int[] {0x00,0x00,0x00});
@@ -42,6 +55,9 @@ public class ColourTest {
         assertEquals(black.blue, 0x00,0.0);
     }
 
+    /**
+     * Tests if two instances of the colour object are equal to each other
+     */
     @Test
     public void equalColours() {
         Colour black1 = new Colour(0.0,0.0,0.0);
