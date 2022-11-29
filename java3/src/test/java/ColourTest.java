@@ -38,7 +38,16 @@ public class ColourTest {
     public void RGBMixed(){
         Colour black = new Colour(new int[] {0x00,0x00,0x00});
         assertEquals(black.red, 0x00, 0.0);
-        assertEquals(black.red, 0x00, 0.0);
-        assertEquals(black.red, 0x00,0.0);
+        assertEquals(black.green, 0x00, 0.0);
+        assertEquals(black.blue, 0x00,0.0);
+    }
+
+    @Test
+    public void equalColours() {
+        Colour black1 = new Colour(0.0,0.0,0.0);
+        Colour black2 = new Colour(0.0,0.0,0.0);
+        assertEquals(black1.red, black2.red, 0.0);
+        assertEquals(black1.green, black2.green, 0.0);
+        assertEquals(black1.blue, black2.blue,0.0);
     }
 }

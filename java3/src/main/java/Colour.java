@@ -1,3 +1,4 @@
+import java.io.*;
 public class Colour {
     public double red;
     public double green;
@@ -22,4 +23,21 @@ public class Colour {
         this.green = redGreenBlue[1];
         this.blue = redGreenBlue[2];
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null || this.getClass() != obj.getClass())
+            return false;
+
+        Colour colour1 = (Colour)obj;
+        return this.equals(colour1.red) && this.equals(colour1.green) && this.equals(colour1.blue);
+    }
 }
+
+
+
+
+
+
